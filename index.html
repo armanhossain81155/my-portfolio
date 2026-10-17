@@ -1,41 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon').click(function(){
-                $('ul').toggleClass('show');
-            })
-        })
-    </script>
-    
-    <title>Document</title>
-    
-   
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arman Hossain — React & Frontend Developer Portfolio">
+  <title>Arman Hossain | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <label class="logo">Arman Hossain</label>
-        <ul>
-            <li> <a class="active" href="">Home</a>  </li>
-            <li> <a href="">About</a>  </li>
-            <li> <a href="">Services</a>  </li>
-            <li> <a href="">Contact</a>  </li>
-            <li> <a href="">Feedback</a>  </li>
-        </ul>
-        <label id="icon">
-            <i class="fas fa-bars"></i>
-        </label>
-    </nav>
-    <section>
-        
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Arman<span>.</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting">👋 Hello, I'm</p>
+          <h1 class="hero-name">Arman Hossain</h1>
+          <h2 class="hero-title">
+            <span class="typed" id="typed">React Developer</span><span class="cursor">|</span>
+          </h2>
+          <p class="hero-desc">
+            I build responsive web apps with React and Firebase — from
+            authentication flows to booking systems. I enjoy turning ideas
+            into clean, user-friendly interfaces.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="avatar">
+            <img src="images/profile.png" alt="Arman Hossain">
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              আমি Arman Hossain, একজন Frontend ও React ডেভেলপার। আমি
+              React, React Router এবং Firebase ব্যবহার করে এমন ওয়েব অ্যাপ
+              বানাই যেগুলোতে লগইন, প্রাইভেট পেজ আর বুকিংয়ের মতো বাস্তব
+              ফিচার থাকে।
+            </p>
+            <p>
+              প্রতিটি প্রজেক্টে আমি নতুন কিছু শিখেছি — Context API দিয়ে
+              স্টেট ম্যানেজমেন্ট, ফর্ম ভ্যালিডেশন, Google Maps ইন্টিগ্রেশন।
+              এখন আমার লক্ষ্য আরও সুন্দর, দ্রুত ও রেসপন্সিভ ইউজার
+              এক্সপেরিয়েন্স তৈরি করা।
+            </p>
+          </div>
+
+          <div class="about-stats reveal">
+            <div class="stat">
+              <h3>3+</h3>
+              <p>React Projects</p>
+            </div>
+            <div class="stat">
+              <h3>3</h3>
+              <p>Auth Methods (Google, Facebook, Email)</p>
+            </div>
+            <div class="stat">
+              <h3>2020</h3>
+              <p>Started Coding with React</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning journey (প্রজেক্টের কমিট ইতিহাস থেকে) -->
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <span class="timeline-date">Jul — Aug 2021</span>
+            <h4>Online Grocery Shop</h4>
+            <p>Bootstrap, Firebase Auth আর Google Maps একসাথে ব্যবহার করে একটি পূর্ণাঙ্গ অ্যাপ।</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">Jul 2021</span>
+            <h4>Firebase Authentication</h4>
+            <p>Google, Facebook ও Email/Password — তিন উপায়ে Authentication শেখা।</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">Sep 2020 — Jul 2021</span>
+            <h4>Burj Al Arab Hotel Booking</h4>
+            <p>React Router, Private Route আর Material-UI দিয়ে প্রথম বড় React প্রজেক্ট।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>Frontend</h3>
+            <ul class="chips">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-icon">⚛</div>
+            <h3>React Ecosystem</h3>
+            <ul class="chips">
+              <li>React Hooks</li>
+              <li>Context API</li>
+              <li>React Router</li>
+              <li>Private Routes</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-icon">◧</div>
+            <h3>UI Libraries</h3>
+            <ul class="chips">
+              <li>Material-UI</li>
+              <li>Bootstrap</li>
+              <li>React Bootstrap</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-icon">🔥</div>
+            <h3>Backend &amp; APIs</h3>
+            <ul class="chips">
+              <li>Firebase Auth</li>
+              <li>Google Sign-In</li>
+              <li>Facebook Login</li>
+              <li>Google Maps API</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-icon">⎇</div>
+            <h3>Tools</h3>
+            <ul class="chips">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>npm</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="react">React</button>
+          <button class="filter-btn" data-filter="firebase">Firebase</button>
+        </div>
+
+        <!-- কার্ডগুলো js/projects.js এর ডেটা থেকে তৈরি হয় -->
+        <div class="projects-grid" id="projectsGrid"></div>
+
+        <p class="more-projects">
+          আরও কাজ দেখতে
+          <a href="https://github.com/armanhossain81155" target="_blank" rel="noopener">GitHub প্রোফাইল</a>
+          ভিজিট করুন।
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p class="contact-desc">
+              নতুন প্রজেক্ট, চাকরির সুযোগ বা যেকোনো প্রশ্নের জন্য নির্দ্বিধায়
+              যোগাযোগ করুন। আমি দ্রুত উত্তর দেওয়ার চেষ্টা করি।
+            </p>
+
+            <a href="mailto:arman81155@gmail.com" class="contact-email">
+              ✉ arman81155@gmail.com
+            </a>
+
+            <div class="socials">
+              <a href="https://github.com/armanhossain81155" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/arman-hossain-81155u" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/armanfarabi10" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- ফর্মটি ইউজারের ইমেইল অ্যাপ খুলে মেসেজ পাঠায় (কোনো সার্ভার লাগে না) -->
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="field">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+            <p class="form-status" id="formStatus" role="status"></p>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Arman Hossain. Built with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
