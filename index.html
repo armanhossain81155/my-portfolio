@@ -256,8 +256,10 @@
             </div>
           </div>
 
-          <!-- ফর্মটি ইউজারের ইমেইল অ্যাপ খুলে মেসেজ পাঠায় (কোনো সার্ভার লাগে না) -->
+          <!-- ফর্মটি Web3Forms দিয়ে মেসেজ সরাসরি ইমেইলে পাঠায় (কোনো সার্ভার লাগে না) -->
           <form class="contact-form reveal" id="contactForm" novalidate>
+            <!-- Spam ফাঁদ: মানুষ এটা দেখে না, bot পূরণ করলে মেসেজ বাদ যায় -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="field">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="John Doe" required>

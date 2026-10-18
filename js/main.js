@@ -246,26 +246,57 @@ if (finePointer && !prefersReducedMotion) {
   });
 }
 
-// ===== Contact form → opens the visitor's email app =====
+// ===== Contact form → sends the message to my inbox via Web3Forms =====
+// The access key is public by design: it can only deliver mail to my own inbox.
+const WEB3FORMS_KEY = "d9bf659d-fa85-484d-9888-ac6e7949ed31";
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
+const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-contactForm.addEventListener("submit", (e) => {
+const setFormStatus = (text, type) => {
+  formStatus.textContent = text;
+  formStatus.className = `form-status ${type}`;
+};
+
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const { name, email, message } = contactForm.elements;
+  const { name, email, message, botcheck } = contactForm.elements;
 
   if (!name.value.trim() || !message.value.trim() || !/\S+@\S+\.\S+/.test(email.value)) {
-    formStatus.textContent = "অনুগ্রহ করে নাম, সঠিক ইমেইল ও মেসেজ লিখুন।";
-    formStatus.className = "form-status error";
+    setFormStatus("অনুগ্রহ করে নাম, সঠিক ইমেইল ও মেসেজ লিখুন।", "error");
     return;
   }
 
-  const subject = encodeURIComponent(`Portfolio contact from ${name.value.trim()}`);
-  const body = encodeURIComponent(`${message.value.trim()}\n\n— ${name.value.trim()} (${email.value.trim()})`);
-  window.location.href = `mailto:arman81155@gmail.com?subject=${subject}&body=${body}`;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+  setFormStatus("মেসেজ পাঠানো হচ্ছে...", "");
 
-  formStatus.textContent = "আপনার ইমেইল অ্যাপ খোলা হচ্ছে...";
-  formStatus.className = "form-status success";
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: `Portfolio contact from ${name.value.trim()}`,
+        from_name: "Arman Portfolio",
+        name: name.value.trim(),
+        email: email.value.trim(),
+        message: message.value.trim(),
+        botcheck: botcheck.checked,
+      }),
+    });
+    const result = await res.json();
+    if (!res.ok || !result.success) throw new Error(result.message || `HTTP ${res.status}`);
+
+    setFormStatus("✓ ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে। আমি শীঘ্রই উত্তর দেব।", "success");
+    contactForm.reset();
+  } catch (err) {
+    console.error(err);
+    setFormStatus("মেসেজ পাঠানো যায়নি। একটু পরে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন: arman81155@gmail.com", "error");
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message";
+  }
 });
 
 // ===== Footer year =====

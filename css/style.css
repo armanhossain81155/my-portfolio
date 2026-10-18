@@ -1126,6 +1126,20 @@ ul {
 }
 
 .form-status.error { color: #f87171; }
+
+/* Honeypot field for bots — hidden from people */
+.hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
 .form-status.success { color: var(--primary); }
 
 .contact-form .btn {
