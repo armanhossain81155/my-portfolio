@@ -6,6 +6,22 @@
 // =========================================
 const PROJECTS = [
   {
+    title: "SkyCast — Weather App",
+    description:
+      "যেকোনো শহরের রিয়েল-টাইম আবহাওয়া, আগামী ২৪ ঘণ্টা আর ৭ দিনের পূর্বাভাস দেখার অ্যাপ। আবহাওয়া অনুযায়ী ব্যাকগ্রাউন্ড বদলায়।",
+    features: [
+      "লাইভ সাজেশনসহ শহর খোঁজা ও 'My location' বাটন",
+      "Humidity, Wind, UV, Rain chance, Sunrise/Sunset",
+      "ঘণ্টাভিত্তিক ও ৭ দিনের ফোরকাস্ট, °C/°F টগল",
+      "Open-Meteo API — কোনো API key লাগে না",
+    ],
+    tech: ["JavaScript", "REST API", "CSS Grid", "Responsive"],
+    category: ["javascript"],
+    image: "images/projects/weather-app.png",
+    github: "https://github.com/armanhossain81155/weather-app",
+    live: "https://armanhossain81155.github.io/weather-app/",
+  },
+  {
     title: "Burj Al Arab — Hotel Booking",
     description:
       "একটি হোটেল রুম বুকিং অ্যাপ। ইউজার Google দিয়ে লগইন করে Single, Double বা Family রুম বুক করতে পারে।",
