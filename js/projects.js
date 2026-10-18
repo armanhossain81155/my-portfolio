@@ -22,6 +22,22 @@ const PROJECTS = [
     live: "https://armanhossain81155.github.io/weather-app/",
   },
   {
+    title: "ShopNest — E-Commerce Store",
+    description:
+      "১৯০+ প্রোডাক্টের একটি রেসপন্সিভ অনলাইন শপ — সার্চ, ফিল্টার, উইশলিস্ট, কার্ট আর চেকআউটসহ। লাইট/ডার্ক মোড আছে।",
+    features: [
+      "লাইভ সার্চ, ডিপার্টমেন্ট/ক্যাটাগরি, দাম ও স্টক ফিল্টার, সর্টিং",
+      "Quick view মডাল — ছবির গ্যালারি ও পরিমাণ বাছাই",
+      "স্লাইড-ইন কার্ট, ফ্রি শিপিং প্রোগ্রেস বার, ভ্যালিডেশনসহ চেকআউট",
+      "কার্ট ও উইশলিস্ট localStorage-এ সেভ থাকে",
+    ],
+    tech: ["JavaScript", "REST API", "LocalStorage", "Responsive"],
+    category: ["javascript"],
+    image: "images/projects/e-commerce-store.png",
+    github: "https://github.com/armanhossain81155/e-commerce-store",
+    live: "https://armanhossain81155.github.io/e-commerce-store/",
+  },
+  {
     title: "Burj Al Arab — Hotel Booking",
     description:
       "একটি হোটেল রুম বুকিং অ্যাপ। ইউজার Google দিয়ে লগইন করে Single, Double বা Family রুম বুক করতে পারে।",
