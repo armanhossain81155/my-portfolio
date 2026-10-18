@@ -8,9 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Devicon: tech brand icons for the skills section -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Animated gradient background -->
+  <div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -38,8 +44,8 @@
     <section class="hero" id="home">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="hero-greeting">👋 Hello, I'm</p>
-          <h1 class="hero-name">Arman Hossain</h1>
+          <p class="hero-greeting"><span class="status-dot"></span>👋 Hello, I'm</p>
+          <h1 class="hero-name">Arman <span class="shine">Hossain</span></h1>
           <h2 class="hero-title">
             <span class="typed" id="typed">React Developer</span><span class="cursor">|</span>
           </h2>
@@ -49,8 +55,8 @@
             into clean, user-friendly interfaces.
           </p>
           <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-            <a href="#projects" class="btn btn-outline">View Projects</a>
+            <a href="#contact" class="btn btn-primary magnetic">Contact Me</a>
+            <a href="#projects" class="btn btn-outline magnetic">View Projects</a>
           </div>
         </div>
 
@@ -58,9 +64,23 @@
           <div class="avatar">
             <img src="images/profile.png" alt="Arman Hossain">
           </div>
+          <span class="float-badge b1"><i class="devicon-react-original colored"></i> React</span>
+          <span class="float-badge b2"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+          <span class="float-badge b3"><i class="devicon-javascript-plain colored"></i> JS</span>
+          <span class="float-badge b4"><i class="devicon-materialui-plain colored"></i> MUI</span>
         </div>
       </div>
+
+      <a href="#about" class="scroll-down" aria-label="Scroll down"><span></span></a>
     </section>
+
+    <!-- ===== Tech marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>React</span><i>✦</i><span>JavaScript</span><i>✦</i><span>Firebase</span><i>✦</i><span>React Router</span><i>✦</i><span>Material-UI</span><i>✦</i><span>Bootstrap</span><i>✦</i><span>Responsive Design</span><i>✦</i>
+        <span>React</span><i>✦</i><span>JavaScript</span><i>✦</i><span>Firebase</span><i>✦</i><span>React Router</span><i>✦</i><span>Material-UI</span><i>✦</i><span>Bootstrap</span><i>✦</i><span>Responsive Design</span><i>✦</i>
+      </div>
+    </div>
 
     <!-- ===== About ===== -->
     <section class="section" id="about">
@@ -85,11 +105,11 @@
 
           <div class="about-stats reveal">
             <div class="stat">
-              <h3>3+</h3>
+              <h3><span class="counter" data-target="3">0</span>+</h3>
               <p>React Projects</p>
             </div>
             <div class="stat">
-              <h3>3</h3>
+              <h3><span class="counter" data-target="3">0</span></h3>
               <p>Auth Methods (Google, Facebook, Email)</p>
             </div>
             <div class="stat">
@@ -126,20 +146,20 @@
         <h2 class="section-title">My <span>Skills</span></h2>
 
         <div class="skills-grid">
-          <div class="skill-group reveal">
-            <div class="skill-icon">&lt;/&gt;</div>
+          <div class="skill-group reveal" style="--c: #e34f26">
+            <div class="skill-icon"><i class="devicon-html5-plain colored"></i></div>
             <h3>Frontend</h3>
             <ul class="chips">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
+              <li><i class="devicon-html5-plain colored"></i>HTML5</li>
+              <li><i class="devicon-css3-plain colored"></i>CSS3</li>
+              <li><i class="devicon-javascript-plain colored"></i>JavaScript (ES6+)</li>
+              <li><i class="devicon-react-original colored"></i>React</li>
               <li>Responsive Design</li>
             </ul>
           </div>
 
-          <div class="skill-group reveal">
-            <div class="skill-icon">⚛</div>
+          <div class="skill-group reveal" style="--c: #61dafb">
+            <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
             <h3>React Ecosystem</h3>
             <ul class="chips">
               <li>React Hooks</li>
@@ -149,35 +169,35 @@
             </ul>
           </div>
 
-          <div class="skill-group reveal">
-            <div class="skill-icon">◧</div>
+          <div class="skill-group reveal" style="--c: #007fff">
+            <div class="skill-icon"><i class="devicon-materialui-plain colored"></i></div>
             <h3>UI Libraries</h3>
             <ul class="chips">
-              <li>Material-UI</li>
-              <li>Bootstrap</li>
+              <li><i class="devicon-materialui-plain colored"></i>Material-UI</li>
+              <li><i class="devicon-bootstrap-plain colored"></i>Bootstrap</li>
               <li>React Bootstrap</li>
             </ul>
           </div>
 
-          <div class="skill-group reveal">
-            <div class="skill-icon">🔥</div>
+          <div class="skill-group reveal" style="--c: #ffca28">
+            <div class="skill-icon"><i class="devicon-firebase-plain colored"></i></div>
             <h3>Backend &amp; APIs</h3>
             <ul class="chips">
-              <li>Firebase Auth</li>
-              <li>Google Sign-In</li>
-              <li>Facebook Login</li>
+              <li><i class="devicon-firebase-plain colored"></i>Firebase Auth</li>
+              <li><i class="devicon-google-plain colored"></i>Google Sign-In</li>
+              <li><i class="devicon-facebook-plain colored"></i>Facebook Login</li>
               <li>Google Maps API</li>
             </ul>
           </div>
 
-          <div class="skill-group reveal">
-            <div class="skill-icon">⎇</div>
+          <div class="skill-group reveal" style="--c: #f34f29">
+            <div class="skill-icon"><i class="devicon-git-plain colored"></i></div>
             <h3>Tools</h3>
             <ul class="chips">
-              <li>Git</li>
-              <li>GitHub</li>
+              <li><i class="devicon-git-plain colored"></i>Git</li>
+              <li><i class="devicon-github-original"></i>GitHub</li>
               <li>npm</li>
-              <li>VS Code</li>
+              <li><i class="devicon-vscode-plain colored"></i>VS Code</li>
             </ul>
           </div>
         </div>

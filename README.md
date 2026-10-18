@@ -28,7 +28,7 @@ Add an object to the `PROJECTS` array in `js/projects.js`:
   category: ["react"],          // must match a filter button's data-filter
   image: "images/projects/my-new-project.jpg",
   github: "https://github.com/armanhossain81155/my-new-project",
-  live: "",                      // leave empty to hide the Live Demo button
+  live: "",                      // leave empty to show a disabled "Live Demo · Soon" button
 }
 ```
 
